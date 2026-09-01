@@ -1,0 +1,30 @@
+{
+  "name": "hw-accel-pdf-viewer",
+  "version": "0.1.0",
+  "description": "A browser extension that replaces the built-in PDF viewer: WebGL2 compositing, rasterization off the main thread.",
+  "scripts": {
+    "postinstall": "node scripts/copy-assets.mjs && node scripts/make-icons.mjs",
+    "predev": "node scripts/copy-assets.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/copy-assets.mjs && node scripts/make-icons.mjs",
+    "build": "vite build && node scripts/build-extension.mjs --strip-maps",
+    "build:debug": "vite build && node scripts/build-extension.mjs",
+    "preview": "vite preview --port 5273",
+    "pack": "node scripts/pack-crx.mjs"
+  },
+  "keywords": [],
+  "author": "SpeedyCoder1192",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "pdfjs-dist": "^4.10.38"
+  },
+  "devDependencies": {
+    "vite": "^5.4.21"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SpeedyCoder1192/hw-accel-pdf-viewer.git"
+  }
+}
